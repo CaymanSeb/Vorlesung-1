@@ -1,0 +1,83 @@
+// Brauche ich für Visual Studio Header 
+#include "stdafx.h"
+
+#include <iostream>
+#include < cstdlib >
+
+using namespace std;
+
+int main()
+{
+	int counter = 0;
+	int eingabe = 0;
+
+	do {
+		cout << "Geben Sie die Anzahl der Töne für die Melodie ein, 0 beendet das Programm." << endl;
+		cin >> eingabe;
+
+		if (eingabe == 0) {
+			break;
+		}
+		else {
+			do {
+				string string_array[12] = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "H" };
+				// Weiß nicht, wie ich es machen soll, wenn der "rand" 0 ausgibt, da das erste Element im array über 1 aufgerufen wird.
+				// Ich könnte noch einmal eine do while schleife machen, um das zu überprüfen und er sie durchläuft bis >0 herauskommt.
+				int random_int = rand() % 12;
+
+				// Warum geht das nicht?
+				cout << string_array[random_int] << endl;
+				// Kann durch den Fehler leider nicht testen, wo der counter hin muss und ob die Variablen auch immer in die Unterschleifen übergeben und wieder zurückgegeben werden.
+				counter++;
+
+			} while (counter < eingabe);
+		}
+
+	} while (true);
+	
+	return 0;
+}
+
+
+
+
+/* Meine ersten Versuche, unter anderem mit einem Kumpel, der gerade C lernt, bitte nicht intensiv beachten :D 
+int main()
+{
+	int x;
+	int a;
+	int i;
+
+	printf("geben sie eine Zahl ein");
+	scanf_s("%i", &x);
+
+	for (i = 1; i <= x; i = i + 1)
+	{ 
+
+	a = rand() % 12;
+
+	char array[12] = { 'g', 'h', '3', 'D', 'E', 'F', 'F', 'G', 'G', 'A', 'A', 'H' };
+
+	printf("%c", array[a]);
+
+	char barray[12] = { ' ', '#', ' ', '#', ' ', '#', '#', ' ', '#', ' ', '#', ' ' };
+
+	printf("%c\n", barray[a]);
+
+	
+	}
+
+
+
+	/*string array[12] = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "H" };
+
+	while (string array[] != 0);
+
+
+		cout << "Bitte geben Sie die Anzahl der Töne an, 0 beendet das Programm" << endl;
+
+		cin >>
+	
+    return 0;*/
+
+
