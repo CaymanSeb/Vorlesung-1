@@ -1,0 +1,11 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int personen = 12;
+	cout << "Es sind " << personen << " Personen anwesend!" << endl;
+
+	return 0;
+}
