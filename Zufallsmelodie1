@@ -1,0 +1,38 @@
+// Brauche ich für Visual Studio Header 
+#include "stdafx.h"
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+	int counter = 0;
+	int eingabe = 0;
+
+	do {
+		cout << "Geben Sie die Anzahl der Töne für die Melodie ein, 0 beendet das Programm." << endl;
+		cin >> eingabe;
+
+		if (eingabe == 0) {
+			break;
+		}
+		else {
+			do {
+				string string_array[12] = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "H" };
+				int random_int = rand() % 12;
+
+				// Warum geht das nicht?
+				cout << string_array[random_int] << endl;
+				// Kann durch den Fehler leider nicht testen, wo der counter hin muss und ob die Variablen auch immer in die Unterschleifen übergeben und wieder zurückgegeben werden.
+				counter++;
+
+			} while (counter < eingabe);
+		}
+		counter = 0;
+
+	} while (true);
+	
+	return 0;
+}
